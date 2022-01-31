@@ -1,0 +1,41 @@
+html{
+	height: 95vh;
+	margin: 0;
+}
+body{
+	font-family: Verdana, Helvetica, "Trebuchet MS", sans-serif;
+	height: 95vh;
+	margin: 0;
+}
+#content {
+	height: inherit;
+	margin: 5px;
+	padding: 0;
+}
+#tabs {
+	padding: 0;
+}
+.ui-tabs .ui-tabs-panel {
+	padding: 10px 10px;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-state-disabled .ui-tabs-anchor,
+.ui-tabs .ui-tabs-nav li.ui-tabs-loading .ui-tabs-anchor {
+	cursor: default;
+}
+#icons {
+	margin: 0;
+	padding: 0;
+}
+#icons li {
+	margin: 2px;
+	position: relative;
+	padding: 4px 0;
+	cursor: pointer;
+	float: left;
+	list-style: none;
+}
+#icons span.ui-icon {
+	float: left;
+	margin: 0 4px;
+}
