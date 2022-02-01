@@ -9,19 +9,70 @@
 <body>
 <frc-dashboard>
 
-<nt-number key="/SmartDashboard/GyroAngle" value="135"></nt-number>
-<frc-gyro source-key="/SmartDashboard/GyroAngle" precision="3"></frc-gyro>
-
+<nt-number key="/SmartDashboard/GyroAngle" value="0"></nt-number>
 <nt-number key="/FMSInfo/MatchType" value="1"></nt-number>
 <nt-number key="/FMSInfo/MatchNumber" value="2"></nt-number>
-<nt-string key="/FMSInfo/EventName" value="Another Event"></nt-string> 
+<nt-string key="/FMSInfo/EventName" value="Another Event"></nt-string>
 <nt-number key="/FMSInfo/FMSControlData" value="29"></nt-number>
 <nt-boolean key="/FMSInfo/IsRedAlliance" value="false"></nt-boolean>
-<frc-networktable-tree></frc-networktable-tree>
+
+<frc-root-layout>
+	<frc-tabs orientation="horizontal" theme="" name="tabs">
+		<frc-tab label="Drive" name="drivetab"></frc-tab>
+		<frc-tab label="Subsys" name="subsystab"></frc-tab>
+		<frc-tab label="FMSInfo" name="fmstab"></frc-tab>
+	</frc-tabs>
+
+	<frc-tabs-content>
+		<frc-tab-content style="display: block;">
+			<frc-label text="Content for tab 1" style="transform: translate(20px, 54px);" slot="1"></frc-label>
+		</frc-tab-content>
+		<frc-tab-content style="display: none;">
+			<frc-label text="Content for tab 2" slot="2"></frc-label>
+		</frc-tab-content>
+		<frc-tab-content style="display: none;">
+			<frc-label text="Content for tab 3" slot="3"></frc-label>
+		</frc-tab-content>
+	</frc-tabs-content>
+
+<frc-basic-fms-info source-provider="NetworkTables" source-key="/fmsInfo" match-type="0" match-number="0" event-name="" fms-control-data="0" style="transform: translate(987px, 7px);"></frc-basic-fms-info>
+
+<frc-field game="Rapid React" width="54" height="27" image="field-images/2022-field.png" grid-size="1" unit="foot" style="transform: translate(937px, 95px);" top-left-field-corner-x="74" top-left-field-corner-y="50" bottom-right-field-corner-x="1774" bottom-right-field-corner-y="950">
+	<frc-field-robot source-key="/SmartDashboard/Field/Robot" x="300" y="100" rot="70" width="28" height="31" image="" unit="in" draw="" color="#0000ff" style="width: 0px; height: 0px; transform: translate(0px, 0px) rotate(90deg);"></frc-field-robot>
+</frc-field>
+
+<frc-camera streams="[]" fps="-1" width="-1" height="-1" compression="-1" crosshair-color="#ffffff" crosshair-width="2" wait-image="https://i.ytimg.com/vi/w6geNk3QnBQ/maxresdefault.jpg" style="--image-width:0px; --image-height:0px; --crosshair-width:2px; --crosshair-color:#ffffff; --image-display:block; transform: translate(419px, 8px); width: 509px; height: 366px;"></frc-camera>
+
+<frc-line-chart title="Line Chart" x-axis-label="Time (seconds)" tracked-time="10" time-step="0.25" style="transform: translate(419px, 379px);" source-key="">
+	<frc-chart-axis slot="axes" axis-id="Axis 1" scale-type="linear" min="-1024" max="1024" label="Value" tick-values="[]" position="left"></frc-chart-axis>
+	<frc-chart-data slot="data" label="FL Pos" color="#00aa00" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtFL Position"></frc-chart-data>
+	<frc-chart-data slot="data" label="FR Pos" color="#911eb4" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtFR Position"></frc-chart-data>
+	<frc-chart-data slot="data" label="RL Pos" color="#800000" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtRL Position"></frc-chart-data>
+	<frc-chart-data slot="data" label="RR Pos" color="#f68231" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtRR Position"></frc-chart-data>
+	<frc-chart-data slot="data" label="FL Set" color="#8bf98b" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtFL Setpoint"></frc-chart-data>
+	<frc-chart-data slot="data" label="FR Set" color="#ecb4fd" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtFR Setpoint"></frc-chart-data>
+	<frc-chart-data slot="data" label="RL Set" color="#fb9d9d" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtRL Setpoint"></frc-chart-data>
+	<frc-chart-data slot="data" label="RR Set" color="#fdcaa5" source-provider="NetworkTables" value="0" axis-id="Axis 1" source-key="/smartDashboard/dtRR Setpoint"></frc-chart-data>
+</frc-line-chart>
+
+<frc-combo-box options="[&quot;Option 1&quot;,&quot;Option 2&quot;]" selected="Option 1" source-provider="NetworkTables" name="" default="" placeholder="" theme="" error-message="" style="transform: translate(934px, 308px);"></frc-combo-box>
+
+<frc-gyro source-provider="NetworkTables" value="0" precision="2" style="transform: translate(51px, 529px);" source-key="/smartDashboard/gyroAngle">
+</frc-gyro>
+
+<frc-voltage-view source-provider="NetworkTables" value="0" min="0" max="5" center="0" precision="2" num-tick-marks="6" unit="V" style="transform: translate(52px, 472px);">
+</frc-voltage-view>
+
+<frc-source-tree style="width: 403px; height: 212px; transform: translate(3px, 150px);" source-provider="NetworkTables" source-key="/smartDashboard">
+</frc-source-tree>
+
+<frc-source-tree source-provider="NetworkTables" style="transform: translate(12px, 271px); width: 391px; height: 196px;" name="Commands" source-key="/liveWindow">
+</frc-source-tree>
+
+</frc-root-layout>
 
 
 </frc-dashboard>
-<script src="frc-web-components-3.2.1.min.js"></script>
-<script src="ncgears-dashboard.js"></script>
+<script src="frc-web-components-3.2.1.js"></script>
 </body>
 </html>

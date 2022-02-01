@@ -1,0 +1,8 @@
+#discussion thread
+https://www.chiefdelphi.com/t/introducing-frc-web-components/384537/50
+
+#FWC documentation
+https://frc-web-components.readthedocs.io/en/latest/
+
+#robot dashboard builder
+https://frc-web-components.readthedocs.io/en/latest/dashboard/running.html#chrome-dashboard-app
