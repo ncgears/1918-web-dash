@@ -17,31 +17,29 @@
 <nt-boolean key="/FMSInfo/IsRedAlliance" value="false"></nt-boolean>
 
 <frc-root-layout>
-<!--
-	<frc-tabs orientation="horizontal" theme="" name="tabs">
-		<frc-tab label="Drive" name="drivetab"></frc-tab>
-		<frc-tab label="Subsys" name="subsystab"></frc-tab>
-		<frc-tab label="FMSInfo" name="fmstab"></frc-tab>
+	<frc-nt-number-default source-provider="NetworkTables" key="/tab" value="0"></frc-nt-number-default>
+
+	<frc-tabs orientation="horizontal" theme="" selected="0" source-key="/tab" style="z-index: 1000; transform: translate(0px, 0px);" source-provider="NetworkTables">
+		<frc-tab label="Drive" selected="" source-provider="NetworkTables"></frc-tab>
+		<frc-tab label="Subsys" source-provider="NetworkTables"></frc-tab>
+		<frc-tab label="FMSInfo" source-provider="NetworkTables"></frc-tab>
 	</frc-tabs>
 
-	<frc-tabs-content>
-		<frc-tab-content style="display: block;">
-			<frc-label text="Content for tab 1" style="transform: translate(20px, 54px);" slot="1"></frc-label>
+	<frc-tabs-content source-provider="NetworkTables" selected="0" source-key="/tab">
+		<frc-tab-content style="display: block;" selected="" source-provider="NetworkTables">
+			<frc-label text="Content for tab 1" style="transform: translate(20px, 54px);"></frc-label>
 		</frc-tab-content>
-		<frc-tab-content style="display: none;">
-			<frc-label text="Content for tab 2" slot="2"></frc-label>
+		<frc-tab-content style="display: none;" source-provider="NetworkTables">
+			<frc-label text="Content for tab 2" style="transform: translate(20px, 54px);"></frc-label>
 		</frc-tab-content>
-		<frc-tab-content style="display: none;">
-			<frc-label text="Content for tab 3" slot="3"></frc-label>
+		<frc-tab-content style="display: none;" source-provider="NetworkTables">
+			<frc-label text="Content for tab 3" style="transform: translate(20px, 54px);"></frc-label>
 		</frc-tab-content>
 	</frc-tabs-content>
-<frc-combo-box options="[&quot;Option 1&quot;,&quot;Option 2&quot;]" selected="Option 1" source-provider="NetworkTables" name="" default="" placeholder="" theme="" error-message="" style="transform: translate(934px, 308px);"></frc-combo-box>
-
--->
 
 <!--LEFT-->
 	<!--network tables-->
-	<frc-source-tree style="width: 403px; height: 350px; transform: translate(0px, 0px);" source-provider="NetworkTables" source-key="/smartDashboard"></frc-source-tree>
+	<frc-source-tree style="width: 403px; height: 350px; transform: translate(0px, 100px);" source-provider="NetworkTables" source-key="/smartDashboard"></frc-source-tree>
 	<!--commands network table-->
 	<frc-source-tree source-provider="NetworkTables" style="transform: translate(12px, 271px); width: 391px; height: 196px;" name="Commands" source-key="/liveWindow"></frc-source-tree>
 
